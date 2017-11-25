@@ -24,9 +24,10 @@
     document.getElementsByName('shipping_address_line_1')[0].value = items.shipping_address_line_1;
 	document.getElementsByName('shipping_address_line_2')[0].value = items.shipping_address_line_2;
 	document.getElementsByName('shipping_city')[0].value = items.shipping_city;
-	document.getElementsByName('shipping_state')[0].value = items.shipping_state;
+	document.getElementsByName('shipping_state')[0].selectedIndex = items.shipping_state;
 	document.getElementsByName('shipping_zip_code')[0].value = items.shipping_zip_code;
 	document.getElementsByName('shipping_phone')[0].value = items.shipping_phone;
+
    
   });
 

@@ -9,7 +9,7 @@ function save_options() {
     var shipping_address_line_1 = document.getElementById("shipping_address_line_1").value;
     var shipping_address_line_2 = document.getElementById("shipping_address_line_2").value;
     var shipping_city = document.getElementById("shipping_city").value;
-    var shipping_state = document.getElementById("shipping_state").value;
+    var shipping_state = document.getElementById("shipping_state").selectedIndex;
     var shipping_zip_code = document.getElementById("shipping_zip_code").value;
     var shipping_phone = document.getElementById("shipping_phone").value;
 
@@ -51,7 +51,7 @@ function restore_options() {
     document.getElementById('shipping_address_line_1').value = items.shipping_address_line_1;
     document.getElementById('shipping_address_line_2').value = items.shipping_address_line_2;
     document.getElementById('shipping_city').value = items.shipping_city;
-    document.getElementById('shipping_state').value = items.shipping_state;
+    document.getElementById('shipping_state').selectedIndex = items.shipping_state;
     document.getElementById('shipping_zip_code').value = items.shipping_zip_code;
     document.getElementById('shipping_phone').value = items.shipping_phone;
    
