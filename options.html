@@ -2,29 +2,32 @@
 <html>
 <head>
 <script async src="options.js"></script>
-<style src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></style>
-<script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script async src="js/jquery-3.2.1.min.js"></script>
+<script async src="js/bootstrap.bundle.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css">
+
 <title>SupremeBot</title>
 </head>
-<body>
-<div class="card">
-<label for="shipping_name">First Name: </label><input type="text" id="shipping_name"></input> 
-<label for="shipping_last_name">Last Name: </label><input type="text" id="shipping_last_name"></input> <br>
-<label for="shipping_address_line_1">Street address: </label><input type="text" id="shipping_address_line_1"></input> <br>
-<label for="shipping_address_line_2">Street address Line 2: </label><input type="text" id="shipping_address_line_2"></input> <br>
-<label for="shipping_city">City: </label><input type="text" id="shipping_city"></input> 
-<label for="shipping_state">City: </label><input type="text" id="shipping_state"></input> 
-<label for="shipping_zip_code">Zip: </label><input type="text" id="shipping_zip_code"></input> <br>
-<label for="shipping_phone">Zip: </label><input type="text" id="shipping_phone"></input> <br>
+<body style="background-image: url(static/background.jpg); background-position: center;">
+<div class="card col-lg-3 mx-auto">
+  
+        <label for="shipping_name">First Name: </label><input type="text" id="shipping_name"></input> 
+        <label for="shipping_last_name">Last Name: </label><input type="text" id="shipping_last_name"></input> <br>
+        <label for="shipping_address_line_1">Street address: </label><input type="text" id="shipping_address_line_1"></input> <br>
+        <label for="shipping_address_line_2">Street address Line 2: </label><input type="text" id="shipping_address_line_2"></input> <br>
+        <label for="shipping_city">City: </label><input type="text" id="shipping_city"></input> 
+        <label for="shipping_state">State: </label><input type="text" id="shipping_state"></input> 
+        <label for="shipping_zip_code">Zip: </label><input type="text" id="shipping_zip_code"></input> <br>
+        <label for="shipping_phone">Phone #: </label><input type="text" id="shipping_phone"></input> <br>
 
-<br>
-<button name="save_options" id="save_options" type="submit">Save Options</button>
-<button name="restore_options" id="restore_options" type="submit">Restore Options</button>
-<br>
-<p id="status" name="staus"></p>
-<div>
+        <br>
+        <button name="save_options" id="save_options" type="submit">Save Options</button>
+        <button name="restore_options" id="restore_options" type="submit">Restore Options</button>
+        <br>
+        <p id="status" name="staus"></p>
+
+</div>
 </body>
 <footer>
-
 </footer>
 </html>
