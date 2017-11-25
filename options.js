@@ -1,4 +1,5 @@
 // shipping_address_line_2
+//payment-card-nameOnCard
 
 document.getElementsByName("save_options")[0].addEventListener("click", save_options);
 document.getElementsByName("restore_options")[0].addEventListener("click", restore_options);
@@ -12,6 +13,12 @@ function save_options() {
     var shipping_state = document.getElementById("shipping_state").selectedIndex;
     var shipping_zip_code = document.getElementById("shipping_zip_code").value;
     var shipping_phone = document.getElementById("shipping_phone").value;
+    var payment_credit_card_type = document.getElementById("payment-credit-card-type").selectedIndex;
+    var card_number = document.getElementById("card_number").value;
+    var card_cvn = document.getElementById("card_cvn").value;
+    var payment_card_nameOnCard = document.getElementById("payment_card_nameOnCard").value;
+    var card_expirationMonth = document.getElementById("card_expirationMonth").selectedIndex;
+    var card_expirationYear = document.getElementById("card_expirationYear").selectedIndex;
 
     chrome.storage.sync.set({
         shipping_name: shipping_name,
@@ -22,6 +29,12 @@ function save_options() {
         shipping_state: shipping_state,
         shipping_zip_code: shipping_zip_code,
         shipping_phone: shipping_phone,
+        payment_credit_card_type: payment_credit_card_type,
+        card_number: card_number,
+        card_cvn: card_cvn,
+        payment_card_nameOnCard: payment_card_nameOnCard,
+        card_expirationMonth: card_expirationMonth,
+        card_expirationYear: card_expirationYear
     }, function() {
         var status = document.getElementById('status');
         status.textContent = 'Options saved.';
@@ -43,7 +56,13 @@ function restore_options() {
       shipping_city: "City",
       shipping_state: "State",
       shipping_zip_code: "zip",
-      shipping_phone: "phone #"
+      shipping_phone: "phone #",
+      payment_credit_card_type: "Card type",
+      card_number: "test",
+      card_cvn: "123",
+      payment_card_nameOnCard: "Name On Card",
+      card_expirationMonth: "MM",
+      card_expirationYear: "YY"
   }, function(items) {
 
     document.getElementById('shipping_name').value = items.shipping_name;
@@ -54,6 +73,12 @@ function restore_options() {
     document.getElementById('shipping_state').selectedIndex = items.shipping_state;
     document.getElementById('shipping_zip_code').value = items.shipping_zip_code;
     document.getElementById('shipping_phone').value = items.shipping_phone;
+    document.getElementById('payment-credit-card-type').selectedIndex = items.payment_credit_card_type;
+    document.getElementById('card_number').value = items.card_number;
+    document.getElementById('card_cvn').value = items.card_cvn;
+    document.getElementById('payment_card_nameOnCard').value = items.payment_card_nameOnCard;
+    document.getElementById('card_expirationMonth').selectedIndex = items.card_expirationMonth;
+    document.getElementById('card_expirationYear').selectedIndex = items.card_expirationYear;
    
   });
 }

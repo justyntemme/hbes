@@ -15,7 +15,8 @@
         <label for="shipping_last_name">Last Name: </label><input type="text" id="shipping_last_name"></input> <br>
         <label for="shipping_address_line_1">Street address: </label><input type="text" id="shipping_address_line_1"></input> <br>
         <label for="shipping_address_line_2">Street address Line 2: </label><input type="text" id="shipping_address_line_2"></input> <br>
-        <label for="shipping_city">City: </label><input type="text" id="shipping_city"></input> 
+        <label for="shipping_city">City: </label><input type="text" id="shipping_city"></input> <br>
+        <label for="shipping_state">State</label>
         <select id="shipping_state" class="tooltip-open states-dropdown" name="shipping_state" data-valid="select" required="required" data-tooltip="#tooltip-state" data-message="Please choose a state." data-label="State">
 									<option value="0" selected="selected">
 										Select</option>
@@ -74,10 +75,75 @@
 									</select>
         <label for="shipping_zip_code">Zip: </label><input type="text" id="shipping_zip_code"></input> <br>
         <label for="shipping_phone">Phone #: </label><input type="text" id="shipping_phone"></input> <br>
+        <h2>Payment Information</h2> <br>
 
-        <br>
+        <label for="payment-credit-card-type">Card Type</label>
+        <select name="payment-credit-card-type" id="payment-credit-card-type" class="cards-dropdown tooltip-open gold" data-valid="select" required="required" data-tooltip="#tooltip-credit-type" data-message="Please choose a credit card type." data-label="Credit Card Type">
+														<option default="" value="0">Select</option>
+														<option value="001" data-tooltip-msg="#credit-card-message-visa" data-auth-amount-msg="#credit-card-auth-message-visa" data-select-card="select-card-visa" data-select-card-class="select-card-visa" data-cardtype="visa">Visa</option>
+														<option value="002" data-tooltip-msg="#credit-card-message-master" data-auth-amount-msg="#credit-card-auth-message-master" data-select-card="select-card-master" data-select-card-class="select-card-master" data-cardtype="master">MasterCard</option>
+														<option value="003" data-tooltip-msg="#credit-card-message-amex" data-auth-amount-msg="#credit-card-auth-message-amex" data-select-card="select-card-amex" data-select-card-class="select-card-amex" data-cardtype="amex">American Express</option>
+														<option value="007" data-tooltip-msg="#credit-card-message-jcb" data-auth-amount-msg="#credit-card-auth-message-jcb" data-select-card="select-card-jcb" data-select-card-class="select-card-jcb" data-cardtype="jcb">JCB</option>
+														<option value="004" data-tooltip-msg="#credit-card-message-discover" data-auth-amount-msg="#credit-card-auth-message-discover" data-select-card="select-card-discover" data-select-card-class="select-card-discover" data-cardtype="discover">Discover</option>
+														</select>
+
+        
+        <label for="card_number">Card Number </label><input type="text" id="card_number"></input> 
+        <label for="card_cvn">Security Code </label><input type="text" id="card_cvn"></input> <br>
+        <label for="payment_card_nameOnCard">Name On Card </label><input type="text" id="payment_card_nameOnCard"></input> <br>
+        <div class="input-content card-expiration-form">
+												<label>Expiration Date</label>
+												<div class="card-expiration-month">
+													<div class="custom-select-parent arrow-dropdown-fix_small">
+														<select name="payment-credit-card-expiration-month" id="card_expirationMonth" data-valid="select" class="custom _disable-mobile tooltip-open expiration-date-expiration-year gold" required="required" data-tooltip="#tooltip-end-year" data-message="Please choose a month." data-label="Please choose a month.">
+															<option value="0" default="">MM</option>
+															<option value="1">01</option>
+															<option value="2">02</option>
+															<option value="3">03</option>
+															<option value="4">04</option>
+															<option value="5">05</option>
+															<option value="6">06</option>
+															<option value="7">07</option>
+															<option value="8">08</option>
+															<option value="9">09</option>
+															<option value="10">10</option>
+															<option value="11">11</option>
+															<option value="12">12</option>
+															</select>
+														<div id="tooltip-end-month" class="tooltip-help">
+															<div class="tooltip-message error-text"></div>
+														</div>
+													</div>
+												</div>
+												<div class="card-expiration-year">
+													<div class="custom-select-parent arrow-dropdown-fix_small">
+														<select name="payment-credit-card-expiration-year" id="card_expirationYear" data-valid="select" class="custom _disable-mobile tooltip-open expiration-date-expiration-month gold" required="required" data-tooltip="#tooltip-end-month" data-message="Please choose a year." data-label="Expiration Year">
+															<option value="0" default="">YYYY</option>
+															<option value="2017">2017</option>
+															<option value="2018">2018</option>
+															<option value="2019">2019</option>
+															<option value="2020">2020</option>
+															<option value="2021">2021</option>
+															<option value="2022">2022</option>
+															<option value="2023">2023</option>
+															<option value="2024">2024</option>
+															<option value="2025">2025</option>
+															<option value="2026">2026</option>
+															<option value="2027">2027</option>
+															</select>
+														<div id="tooltip-end-year" class="tooltip-help">
+															<div class="tooltip-message error-text"></div>
+														</div>
+
+													</div>
+												</div>
+
+											</div>
+
+
         <button name="save_options" id="save_options" type="submit">Save Options</button>
         <button name="restore_options" id="restore_options" type="submit">Restore Options</button>
+        
         <br>
         <p id="status" name="staus"></p>
 

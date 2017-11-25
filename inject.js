@@ -14,10 +14,18 @@
 	  shipping_city: "shipping_city",
 	  shipping_state: "state",
 	  shipping_zip_code: "zip",
-	  shipping_phone: "phone #"
+	  shipping_phone: "phone #",
+	  payment_credit_card_type: "card Type",
+	  card_number: "card number",
+	  card_cvn: "Security Code",
+	  payment_card_nameOnCard: "Name On Card",
+	  card_expirationMonth: "MM",
+	  card_expirationYear: "YY"
 
   }, function(items) {
 	  console.log(items);
+
+	document.getElementById('place-order-terms').checked = true;
 
     document.getElementsByName('shipping_name')[0].value = items.shipping_name;
 	document.getElementsByName('shipping_last_name')[0].value = items.shipping_last_name;
@@ -27,6 +35,15 @@
 	document.getElementsByName('shipping_state')[0].selectedIndex = items.shipping_state;
 	document.getElementsByName('shipping_zip_code')[0].value = items.shipping_zip_code;
 	document.getElementsByName('shipping_phone')[0].value = items.shipping_phone;
+	document.getElementsByName('payment-card-type')[0].selectedIndex = items.payment_credit_card_type;
+	document.getElementsByName('card_number')[0].value = items.card_number;
+	document.getElementsByName('card_cvn')[0].value = items.card_cvn;
+	document.getElementsByName('payment-card-nameOnCard')[0].value = items.payment_card_nameOnCard
+	document.getElementById('card_expirationMonth').selectedIndex = items.card_expirationMonth;
+	document.getElementById('card_expirationYear').selectedIndex = items.card_expirationYear;
+
+
+
 
    
   });
