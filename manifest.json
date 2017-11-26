@@ -1,10 +1,14 @@
 {
-  "name": "Injecta",
-  "version": "0.0.1",
+  "name": "HypeBeast Essentials",
+  "version": "0.1.3",
+  "icons": {
+    "48": "static/logo.png",
+    "128": "static/logo-128.png"
+  },
   "manifest_version": 2,
-  "description": "Injecting stuff",
+  "description": "HybeBeast Essentials",
   "options_page": "options.html",
-  "homepage_url": "http://danharper.me",
+  "homepage_url": "https://nextwavesolutions.io",
   "background": {
     "scripts": [
       "background.js"
@@ -12,7 +16,7 @@
     "persistent": true
   },
   "browser_action": {
-    "default_title": "Inject!"
+    "default_title": "Checkout"
   },
   "permissions": [
     "https://*/*",

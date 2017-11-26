@@ -1,6 +1,3 @@
-// shipping_address_line_2
-//payment-card-nameOnCard
-
 document.getElementsByName("save_options")[0].addEventListener("click", save_options);
 document.getElementsByName("restore_options")[0].addEventListener("click", restore_options);
 
@@ -19,6 +16,8 @@ function save_options() {
     var payment_card_nameOnCard = document.getElementById("payment_card_nameOnCard").value;
     var card_expirationMonth = document.getElementById("card_expirationMonth").selectedIndex;
     var card_expirationYear = document.getElementById("card_expirationYear").selectedIndex;
+    var j_username = document.getElementById("j_username").value;
+    var j_password = document.getElementById("j_password").value;
 
     chrome.storage.sync.set({
         shipping_name: shipping_name,
@@ -34,7 +33,9 @@ function save_options() {
         card_cvn: card_cvn,
         payment_card_nameOnCard: payment_card_nameOnCard,
         card_expirationMonth: card_expirationMonth,
-        card_expirationYear: card_expirationYear
+        card_expirationYear: card_expirationYear,
+        j_username: j_username,
+        j_password: j_password
     }, function() {
         var status = document.getElementById('status');
         status.textContent = 'Options saved.';
@@ -62,7 +63,9 @@ function restore_options() {
       card_cvn: "123",
       payment_card_nameOnCard: "Name On Card",
       card_expirationMonth: "MM",
-      card_expirationYear: "YY"
+      card_expirationYear: "YY",
+      j_username: "",
+      j_password: ""
   }, function(items) {
 
     document.getElementById('shipping_name').value = items.shipping_name;
@@ -79,6 +82,8 @@ function restore_options() {
     document.getElementById('payment_card_nameOnCard').value = items.payment_card_nameOnCard;
     document.getElementById('card_expirationMonth').selectedIndex = items.card_expirationMonth;
     document.getElementById('card_expirationYear').selectedIndex = items.card_expirationYear;
+    document.getElementById('j_username').value = items.j_username;
+    document.getElementById('j_password').value = items.j_password;
    
   });
 }

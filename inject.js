@@ -2,8 +2,6 @@
 
 (function() {
 
-	// just place a div at top right
-
 
   // Use default value color = 'red' and likesColor = true.
   chrome.storage.sync.get({
@@ -20,11 +18,23 @@
 	  card_cvn: "Security Code",
 	  payment_card_nameOnCard: "Name On Card",
 	  card_expirationMonth: "MM",
-	  card_expirationYear: "YY"
+	  card_expirationYear: "YY",
+	  j_username: "",
+	  j_password: ""
+
+
 
   }, function(items) {
 	  console.log(items);
 	  window.location.replace("https://www.gucci.com/us/en/checkout/single#step-payment");
+
+	  if (window.location.href.includes("login")) {
+		  document.getElementById("j_username").value = items.j_username;
+		  document.getElementById("j_password").value = items.j_password;
+
+		  document.getElementById("loginForm").submit();
+		
+	  } else {
 
 		document.getElementById('place-order-terms').checked = true;
 		document.getElementsByName('shipping_name')[0].value = items.shipping_name;
@@ -38,11 +48,14 @@
 		document.getElementsByName('payment-card-type')[0].selectedIndex = items.payment_credit_card_type;
 		
 		document.getElementsByName('card_cvn')[0].value = items.card_cvn;
-		//document.getElementsByName('payment-card-nameOnCard')[0].value = items.payment_card_nameOnCard
+		document.getElementsByName('payment-card-nameOnCard')[0].value = items.payment_card_nameOnCard
 		document.getElementById('card_expirationMonth').selectedIndex = items.card_expirationMonth;
 		document.getElementById('card_expirationYear').selectedIndex = items.card_expirationYear;
 
 		document.getElementsByName('card_number')[0].value = items.card_number;
+
+		document.getElementsByClassName("verify-payment-type")[0].click();
+	  }
 
    
   });
