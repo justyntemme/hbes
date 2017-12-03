@@ -14,8 +14,8 @@ function save_options() {
     var card_number = document.getElementById("card_number").value;
     var card_cvn = document.getElementById("card_cvn").value;
     var payment_card_nameOnCard = document.getElementById("payment_card_nameOnCard").value;
-    var card_expirationMonth = document.getElementById("card_expirationMonth").selectedIndex;
-    var card_expirationYear = document.getElementById("card_expirationYear").selectedIndex;
+    var card_expirationMonth = document.getElementsByName("card_expirationMonth")[0].selectedIndex;
+    var card_expirationYear = document.getElementsByName("card_expirationYear")[0].selectedIndex;
     var j_username = document.getElementById("j_username").value;
     var j_password = document.getElementById("j_password").value;
 
@@ -80,8 +80,8 @@ function restore_options() {
     document.getElementById('card_number').value = items.card_number;
     document.getElementById('card_cvn').value = items.card_cvn;
     document.getElementById('payment_card_nameOnCard').value = items.payment_card_nameOnCard;
-    document.getElementById('card_expirationMonth').selectedIndex = items.card_expirationMonth;
-    document.getElementById('card_expirationYear').selectedIndex = items.card_expirationYear;
+    document.getElementsByName('card_expirationMonth')[0].selectedIndex = items.card_expirationMonth;
+    document.getElementsByName('card_expirationYear')[0].selectedIndex = items.card_expirationYear;
     document.getElementById('j_username').value = items.j_username;
     document.getElementById('j_password').value = items.j_password;
    

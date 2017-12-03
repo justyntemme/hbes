@@ -20,46 +20,38 @@
 	  card_expirationMonth: "MM",
 	  card_expirationYear: "YY",
 	  j_username: "",
-	  j_password: ""
 
 
 
   }, function(items) {
 	  console.log(items);
-	  window.location.replace("https://www.gucci.com/us/en/checkout/single#step-payment");
-
-	  if (window.location.href.includes("login")) {
-		  document.getElementById("j_username").value = items.j_username;
-		  document.getElementById("j_password").value = items.j_password;
-
-		  document.getElementById("loginForm").submit();
-		
-	  } else {
-
-		document.getElementById('place-order-terms').checked = true;
-		document.getElementsByName('shipping_name')[0].value = items.shipping_name;
-		document.getElementsByName('shipping_last_name')[0].value = items.shipping_last_name;
-		document.getElementsByName('shipping_address_line_1')[0].value = items.shipping_address_line_1;
-		document.getElementsByName('shipping_address_line_2')[0].value = items.shipping_address_line_2;
-		document.getElementsByName('shipping_city')[0].value = items.shipping_city;
-		document.getElementsByName('shipping_state')[0].selectedIndex = items.shipping_state;
-		document.getElementsByName('shipping_zip_code')[0].value = items.shipping_zip_code;
-		document.getElementsByName('shipping_phone')[0].value = items.shipping_phone;
-		document.getElementsByName('payment-card-type')[0].selectedIndex = items.payment_credit_card_type;
-		
-		document.getElementsByName('card_cvn')[0].value = items.card_cvn;
-		document.getElementsByName('payment-card-nameOnCard')[0].value = items.payment_card_nameOnCard
-		document.getElementById('card_expirationMonth').selectedIndex = items.card_expirationMonth;
-		document.getElementById('card_expirationYear').selectedIndex = items.card_expirationYear;
-
-		document.getElementsByName('card_number')[0].value = items.card_number;
-
-		document.getElementsByClassName("verify-payment-type")[0].click();
+	  if (!window.location.href.includes("checkout")) {
+		window.location.replace("https://www.supremenewyork.com/checkout");
 	  }
+	  	
+	  	document.getElementsByName("order[terms]")[0].click()
+	  	document.getElementsByName("order[terms]")[1].click()
 
-   
+		document.getElementsByName('order[billing_name]')[0].value = items.shipping_name + " " +  items.shipping_last_name;
+
+		document.getElementsByName('order[email]')[0].value = items.j_username;
+
+		document.getElementsByName('order[billing_address]')[0].value = items.shipping_address_line_1;
+		document.getElementsByName('order[billing_address_2]')[0].value = items.shipping_address_line_2;
+		document.getElementsByName('order[billing_city]')[0].value = items.shipping_city;
+		document.getElementsByName('order[billing_state]')[0].selectedIndex = items.shipping_state;
+		document.getElementsByName('order[billing_zip]')[0].value = items.shipping_zip_code;
+		document.getElementsByName('order[tel]')[0].value = items.shipping_phone;
+		
+		document.getElementsByName('credit_card[rvv]')[0].value = items.card_cvn;
+		document.getElementsByName('credit_card[month]')[0].selectedIndex = items.card_expirationMonth;
+		document.getElementsByName('credit_card[year]')[0].selectedIndex = items.card_expirationYear;
+
+		document.getElementsByName('credit_card[nlb]')[0].value = items.card_number;
+
+		document.getElementsByName("commit")[0].click();
+	  
+  
   });
-
-
-
+  
 })();

@@ -1,12 +1,12 @@
 {
-  "name": "HypeBeast Essentials",
-  "version": "0.1.3",
+  "name": "HypeBeast Essentials - S",
+  "version": "1.0.0",
   "icons": {
-    "48": "static/logo.png",
-    "128": "static/logo-128.png"
+    "48": "static/s.png",
+    "128": "static/s-128.png"
   },
   "manifest_version": 2,
-  "description": "HybeBeast Essentials",
+  "description": "HybeBeast Essentials - S provides assisted checkout for supported websites.",
   "options_page": "options.html",
   "homepage_url": "https://nextwavesolutions.io",
   "background": {
